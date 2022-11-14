@@ -60,8 +60,8 @@ public class EtudiantController {
    }
   
   @GetMapping("existenceByName/{name}")
-  @ResponseBody
-  public Etudiant testExistEtudiantByname(@PathVariable("name")String name) {
+ 
+  public Etudiant testExistEtudiantByname(@PathVariable("name") String name) {
 	  return etudserv.getEtudiantByNomE(name); 
   }
   

@@ -41,6 +41,7 @@ public class DetailEquipeServiceImplementation implements DetailEquipeService{
 
 
 	    public List<DetailEquipe> findByThematiqueLike(String thematique){
+	    	
 	        return detailEquipeRepository.findByThematiqueLike(thematique);
 	    }
 }

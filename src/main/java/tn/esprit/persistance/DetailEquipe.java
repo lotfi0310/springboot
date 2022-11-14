@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 @Table(name = "Detail_equipe")
 public class DetailEquipe implements Serializable {
@@ -20,6 +22,7 @@ private int idDetailEquipe ;
 private int salle; 
 private String thematique ;
 @OneToOne(mappedBy = "detail_equipe")
+@JsonIgnore
 private Equipe equipe ; 
 
 

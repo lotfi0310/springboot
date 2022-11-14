@@ -17,8 +17,10 @@ UniversityRepository univrep;
 
 @Override
 public List<Universite> retrieveAllUniversites() {
+	if(univrep.findAll()==null) {
+	 log.error("error fetching universities " );
+	}
 	return univrep.findAll();
-
 }
 
 @Override

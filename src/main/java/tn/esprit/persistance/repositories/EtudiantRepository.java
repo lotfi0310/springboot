@@ -20,7 +20,6 @@ public interface EtudiantRepository extends JpaRepository<Etudiant,Integer>{
 			+ "  LEFT JOIN equipe ON equipe_etudiants.equipe_id_equipe=equipe.id_equipe "
 			,nativeQuery=true)
 	public List<Etudiant> getAllEtudiant();
-	
 	public Etudiant getEtudiantByNomE(String name);
 	@Query("select e from Etudiant e where e.nomE like %:prefixe%")
     List<Etudiant> getAllEtudiantsBeginByNomE(@Param("prefixe") String prefixe);

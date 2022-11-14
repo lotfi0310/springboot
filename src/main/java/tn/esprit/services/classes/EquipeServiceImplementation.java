@@ -26,9 +26,7 @@ public Equipe addEquipe(Equipe e) {
 
 @Override
 public Equipe updateEquipe(Equipe e) {
-	e=equiperep.findById(e.getIdEquipe()).get();
-	equiperep.save(e);
-	return e;
+	return equiperep.save(e);
 }
 
 @Override
