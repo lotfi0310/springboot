@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -44,10 +45,9 @@ public class Etudiant implements Serializable {
 	private Set<Contrat> contrat; 
 	@ManyToOne
 	private Departement departement ; 
-	
-	
-	
+    
 	@ManyToMany(mappedBy = "etudiants")
+	@JsonIgnore
      private Set<Equipe> equipe; 
 	// @Enumerated(EnumType.STRING)
 	//private Option op;

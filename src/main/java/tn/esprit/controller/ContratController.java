@@ -28,13 +28,13 @@ public class ContratController {
 	}
 
 	@PutMapping("updateContrat")
-	public Contrat updateContrat( Contrat ce) {
+	public Contrat updateContrat(@RequestBody Contrat ce) {
 		return contserv.updateContrat(ce);
 	}
 
 	@PostMapping("newContrat")
-	public Contrat newContrat( Contrat ce) {
-		contserv.addContrat(ce);
+	public Contrat newContrat( @RequestBody Contrat ce) {
+		ce=contserv.addContrat(ce);
 		return ce ;
 	}
 

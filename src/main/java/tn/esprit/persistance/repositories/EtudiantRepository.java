@@ -22,7 +22,6 @@ public interface EtudiantRepository extends JpaRepository<Etudiant,Integer>{
 	public List<Etudiant> getAllEtudiant();
 	
 	public Etudiant getEtudiantByNomE(String name);
-	
 	@Query("select e from Etudiant e where e.nomE like %:prefixe%")
     List<Etudiant> getAllEtudiantsBeginByNomE(@Param("prefixe") String prefixe);
 

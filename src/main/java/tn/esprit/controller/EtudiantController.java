@@ -69,10 +69,10 @@ public class EtudiantController {
   public List<Etudiant> allEtudiantsNameCommencePar(@PathVariable("name") String name){
 	  return etudserv.getAllEtudiantsBeginByNomE(name);
   }
-  /*
+  
   @GetMapping("getAllEtudiants")
   public List<Etudiant> getAllEtudiant(){
-	  return etudrep.getAllEtudiant();  
-  }*/
+	  return etudserv.getAllEtudiant();  
+  }
   }
 

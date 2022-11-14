@@ -24,6 +24,7 @@ public class Departement implements Serializable{
 	    private String nomDepart;
 	     @OneToMany(mappedBy = "departement")
 	     private Set<Etudiant> etudiants ; 
+	     
 		public Departement() {
 		}
 

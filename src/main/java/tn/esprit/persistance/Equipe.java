@@ -35,7 +35,6 @@ public class Equipe implements Serializable {
 	@OneToOne
 	private DetailEquipe detail_equipe ; 
 	@ManyToMany
-	@JsonIgnore
 	private Set<Etudiant> etudiants; 
 public Equipe() {
 	

@@ -15,7 +15,10 @@ public interface EtudiantService {
 	Etudiant retrieveEtudiant(Integer idEtudiant);
 
 	void removeEtudiant(Integer idEtudiant);
+	
+	public List<Etudiant> getAllEtudiant();
 
     Etudiant getEtudiantByNomE(String name);
+    
     List<Etudiant> getAllEtudiantsBeginByNomE(String prefixe);
 }

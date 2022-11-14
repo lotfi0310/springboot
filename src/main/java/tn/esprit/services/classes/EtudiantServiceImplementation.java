@@ -40,16 +40,17 @@ public class EtudiantServiceImplementation implements EtudiantService {
 
 	@Override
 	public Etudiant updateEtudiant(Etudiant e) {
-		Etudiant e1=retrieveEtudiant(e.getIdEtudiant());
-		log.info(""+e.getIdEtudiant()+"Data before saving:"+e1);
+	
+		log.info(""+e.getIdEtudiant()+"Data before saving");
 	      log.info("saving new values ...");
-	      if(e.hashCode()!=e1.hashCode()) { 
-	    	  log.info("new Value saved "+e);
+	      if(!etudrep.existsById(e.getIdEtudiant())) { 
+	    	  log.info("save"+e);
+	    	  return etudrep.save(e);
+	    	  
 	    		  }
-	      else {
-	    	  log.info("not saved data"+e1);
-	      }
-	      return etudrep.saveAndFlush(e);
+	    
+	      return e;
+	     
 	}
 
 	@Override
@@ -75,6 +76,11 @@ public class EtudiantServiceImplementation implements EtudiantService {
 		log.info("resultat de recherche :"+etudrep.getEtudiantByNomE(name));
 		return etudrep.getEtudiantByNomE(name);
 		
+	}
+
+	@Override
+	public List<Etudiant> getAllEtudiant() {
+		return etudrep.getAllEtudiant();
 	}
 
 

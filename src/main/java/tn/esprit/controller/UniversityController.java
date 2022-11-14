@@ -35,7 +35,7 @@ return u;
 }
 
 @PutMapping("updateUniversity")
-public Universite updateUniversite(@RequestBody Universite u) {
+public Universite updateUniversity(@RequestBody Universite u) {
 	 return univserv.updateUniversite(u);
 }
 

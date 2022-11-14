@@ -10,6 +10,7 @@ import tn.esprit.persistance.Universite;
 import tn.esprit.persistance.repositories.UniversityRepository;
 import tn.esprit.services.Interfaces.UniversiteService;
 @Service
+@Slf4j
 public class UniversityServiceImplementation implements UniversiteService {
 @Autowired
 UniversityRepository univrep;
@@ -28,10 +29,10 @@ return u;
 
 @Override
 public Universite updateUniversite(Universite u) {
-	  u =univrep.findById(u.getIdUniv()).get();
-      univrep.save(u);
-
-     return u;
+	   
+	  log.info(""+u);
+     
+     return  univrep.save(u);
 }
 
 @Override

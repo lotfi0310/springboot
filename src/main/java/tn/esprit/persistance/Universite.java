@@ -21,19 +21,14 @@ public class Universite implements Serializable{
 	@OneToMany
 	private Set<Departement> departments ;
 	public Universite() {
-		super();
 	}
 	public Universite(int idUniv, String nomUniv) {
-		super();
-		this.idUniv = idUniv;
 		this.nomUniv = nomUniv;
 	}
 	public int getIdUniv() {
 		return idUniv;
 	}
-	public void setIdUniv(int idUniv) {
-		this.idUniv = idUniv;
-	}
+	
 	public String getNomUniv() {
 		return nomUniv;
 	}
