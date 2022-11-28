@@ -1,6 +1,7 @@
 package tn.esprit.persistance;
 
 import java.io.Serializable;
+import java.sql.Blob;
 import java.util.Date;
 import java.util.Set;
 
@@ -21,6 +22,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.type.BlobType;
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -37,6 +40,7 @@ public class Etudiant implements Serializable {
 	private int idEtudiant; // Clé primaire
 	private String prenomE;
 	private String nomE;
+	private String picture ; 
 	@Temporal(TemporalType.DATE)
 	private  Date date_naissance; 
 	@Enumerated(EnumType.STRING) 
@@ -70,9 +74,15 @@ public class Etudiant implements Serializable {
 		this.nomE = nomE;
 	}
 
-	
 
-	
+	public String getPicture() {
+		return picture;
+	}
+
+	public void setPicture(String picture) {
+		this.picture = picture;
+	}
+
 	public Date getDate_naissance() {
 		return date_naissance;
 	}
@@ -127,24 +137,25 @@ public class Etudiant implements Serializable {
 	public Etudiant( ) {
 }
 
-	public Etudiant(int idEtudiant, String prenomE, String nomE, Date date_naissance, Option option,
+	public Etudiant(int idEtudiant, String prenomE, String nomE,String picture, Date date_naissance, Option option,
 			Set<Contrat> contrat, Departement departement, Set<Equipe> equipe) {
 		this.idEtudiant = idEtudiant;
 		this.prenomE = prenomE;
 		this.nomE = nomE;
+		this.picture=picture;
 		this.date_naissance = date_naissance;
 		this.option = option;
 		this.contrat = contrat;
 		this.departement = departement;
 		this.equipe = equipe;
-	 
+	 //
 	}
 	@Override
 	public String toString() {
 		return "Etudiant [idEtudiant=" + idEtudiant + ", prenomE=" + prenomE + ", nomE=" + nomE + ", date_naissance="
 				+ date_naissance + ", option=" + option + ", departement=" + departement + "]";
 	}
-
+	
 	
 
 

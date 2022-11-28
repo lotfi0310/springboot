@@ -5,6 +5,7 @@ import java.util.List;
 import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,9 +25,10 @@ import tn.esprit.services.Interfaces.EquipeService;
 import tn.esprit.services.Interfaces.EtudiantService;
 
 @RestController
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/controllerEtudiant")
 public class EtudiantController {
-	
+	//
 	
   @Autowired
   EtudiantService etudserv;
@@ -63,7 +65,7 @@ public class EtudiantController {
   @DeleteMapping("/deletestudent/{id}")
   public String deleteStudentById(@PathVariable("id") int id){
    etudserv.removeEtudiant(id);
-   return ""+displayEtudiantByID(id).getNomE()+"deleted successfully"; 
+   return "deleted successfully"; 
    }
   
   @GetMapping("existenceByName/{name}")
