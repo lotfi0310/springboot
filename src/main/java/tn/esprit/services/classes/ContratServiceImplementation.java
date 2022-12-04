@@ -10,8 +10,10 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import lombok.extern.slf4j.Slf4j;
+import tn.esprit.DTO.ArchivePercentType;
 import tn.esprit.persistance.Contrat;
 import tn.esprit.persistance.Etudiant;
+import tn.esprit.persistance.Specialite;
 import tn.esprit.persistance.repositories.ContratRepository;
 import tn.esprit.persistance.repositories.EtudiantRepository;
 import tn.esprit.services.Interfaces.ContratService;
@@ -88,7 +90,22 @@ EtudiantRepository etudrep;
      contratrep.save(c);
 	return e;
 	}
-	
+
+	 @Override
+	 public List<ArchivePercentType> getContratPercentByArchiveStatus(){
+		 return contratrep.getPercentageGroupByArchiveStatus();
+	 }
+
+	 @Override
+	 public List<Contrat> findAllByDateDebutContratOrDateFinContratOrSpecialiteOrArchiveOrMontantContrat(Date dateDebut, Date dateFin, Specialite specialite, boolean archive, int montantContrat) {
+		 return contratrep.findAllByDateDebutContratOrDateFinContratOrSpecialiteOrArchiveOrMontantContrat(dateDebut, dateFin, specialite, archive, montantContrat);
+	 }
+
+
+
+
+
+
 /*
 	@Override
 	public float getChiffreAffaireEntreDeuxDate(Date startDate, Date endDate) {
