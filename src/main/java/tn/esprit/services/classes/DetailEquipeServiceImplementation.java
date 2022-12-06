@@ -22,13 +22,11 @@ public class DetailEquipeServiceImplementation implements DetailEquipeService{
 	        return detailEquipeRepository.save(detailEquipe);
 	    }
 	    
-	    public List<DetailEquipe> saveDetailEquipes(List<DetailEquipe> detailEquipe){
-	        return detailEquipeRepository.saveAll(detailEquipe);
-	    }
+	  
 
 	    public String deleteDetailEquipe(Integer idDetailEquipe){
-	        detailEquipeRepository.deleteById(idDetailEquipe);
-	        return "DetailEquipe supprimé !" +idDetailEquipe;
+	        detailEquipeRepository.deleteById((int)idDetailEquipe);
+	        return "deleted";
 	    }
 	    
 	    public DetailEquipe upadateDetailEquipe(DetailEquipe detailEquipe){
