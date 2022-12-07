@@ -68,7 +68,7 @@ public class EquipeController {
  
  @PutMapping("affecterDetailsToEquipe/{idEquipe}/{Iddetails}")
  public Equipe affecterDetailsToEquipe(@PathVariable("idEquipe") int IdEquipe,@PathVariable("Iddetails") int IdDetailEquipe) {
-	 return equipeserv.affecterDetailsToEquipe(IdEquipe, IdEquipe);
+	 return equipeserv.affecterDetailsToEquipe(IdEquipe, IdDetailEquipe);
  }
  
  @PutMapping("assignEquipeEtudiant/{idequipe}/{idetudiant}")

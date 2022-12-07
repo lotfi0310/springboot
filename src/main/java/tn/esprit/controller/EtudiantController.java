@@ -79,7 +79,6 @@ public class EtudiantController {
 	  return etudserv.getAllEtudiantsBeginByNomE(name);
   }
 
-  
 	@PutMapping("assignetudianttodepartment/{idet}/{iddep}")
 	public void assignEtudiantToDepartement( @PathVariable("idet") Integer idet, @PathVariable("iddep") Integer iddep) {
 	 etudserv.assignEtudiantToDepartement(idet, iddep);

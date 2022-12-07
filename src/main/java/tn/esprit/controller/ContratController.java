@@ -23,6 +23,7 @@ import tn.esprit.services.Interfaces.ContratService;
 import tn.esprit.services.classes.ExportContratService;
 
 @RestController
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("ContartController")
 @Slf4j
 public class ContratController {
@@ -38,13 +39,11 @@ public class ContratController {
 	}
 //
 
-	@CrossOrigin(origins = "http://localhost:4200")
 	@PutMapping("updateContrat")
 	public Contrat updateContrat(@RequestBody Contrat ce) {
 		return contserv.updateContrat(ce);
 	}
 
-	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping("newContrat")
 	public Contrat newContrat( @RequestBody Contrat ce) {
 		ce=contserv.addContrat(ce);
@@ -57,7 +56,6 @@ public class ContratController {
 		
 		return contserv.retrieveContrat(idContrat);
 	}
-	@CrossOrigin(origins = "http://localhost:4200")
 
 	@DeleteMapping("deleteContrat/{id}")
 	public void removeContrat(@PathVariable("id") int  idContrat) {
@@ -76,7 +74,6 @@ public class ContratController {
 		 log.info("deleting ... ");
 		 return contserv.dropcontratdunjour();
 	 }
-	@CrossOrigin(origins = "http://localhost:4200")
 	@PutMapping("assignContratToEtudiantByID/{idcontrat}/{idetudiant}")
 	public Etudiant assigncontratToEtudiant(@PathVariable("idcontrat") int idcontrat,@PathVariable("idetudiant") int idEtudiant) {
 		return contserv.assigncontratToEtudiant(idcontrat, idEtudiant);

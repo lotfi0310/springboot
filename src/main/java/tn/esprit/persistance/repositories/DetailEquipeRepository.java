@@ -9,7 +9,6 @@ import tn.esprit.persistance.DetailEquipe;
 @Repository
 public interface DetailEquipeRepository extends JpaRepository<DetailEquipe, Integer> {
 
-	    List<DetailEquipe> findByThematiqueLike(String thematique);
+   List<DetailEquipe> findByThematiqueLike(String thematique);
 
 }
-//
