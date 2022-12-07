@@ -18,6 +18,7 @@ import tn.esprit.services.Interfaces.UniversiteService;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("UniversityController")
 public class UniversityController {
 
