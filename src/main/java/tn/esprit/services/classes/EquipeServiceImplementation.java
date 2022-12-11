@@ -24,36 +24,30 @@ DetailEquipeRepository detailequiperep;
 @Autowired
 EtudiantRepository etudrep;
 
-@Override
 public List<Equipe> retrieveAllEquipes() {
 	return (List<Equipe>) equiperep.findAll();
 }
 
-@Override
 public Equipe addEquipe(Equipe e) {
 	e.setFav(0);
 	e=equiperep.save(e);
 	return e;
 }
 
-@Override
 public Equipe updateEquipe(Equipe e) {
 	return equiperep.save(e);
 }
 
-@Override
 public Equipe retrieveEquipe(Integer idEquipe) {
 	return  equiperep.findById(idEquipe).get();
 
 }
 //
-@Override
 public void DeleteEquipe(Integer idEquipe) {
 	equiperep.deleteById(idEquipe);
 	
 }
 
-@Override
 public Equipe affecterDetailsToEquipe(int IdEquipe,int IdDetailEquipe) {
 	Equipe e= equiperep.findById(IdEquipe).get();
 	DetailEquipe de=detailequiperep.findById(IdDetailEquipe).get();
@@ -61,7 +55,6 @@ public Equipe affecterDetailsToEquipe(int IdEquipe,int IdDetailEquipe) {
 	return equiperep.save(e);
 }
 
-@Override
 public Etudiant assignEquipeToEtudiant(int idEquipe, int idEtudiant) {
      Etudiant e=etudrep.findById(idEtudiant).get();
      Equipe eq=equiperep.findById(idEquipe).get();
@@ -70,30 +63,45 @@ public Etudiant assignEquipeToEtudiant(int idEquipe, int idEtudiant) {
 	return e;
 }
 
+<<<<<<< HEAD
+=======
 @Override
+>>>>>>> a990b5996a1b9342f617c2a19853a5b029d8638e
 public List<Etudiant> getAllEtudiantsfromEquipe(int id) {
 	return equiperep.getAllEtudiantsfromEquipe(id);
 
 }
 
+<<<<<<< HEAD
+=======
 @Override
+>>>>>>> a990b5996a1b9342f617c2a19853a5b029d8638e
 public Collection<NameOnly> countetudiantbyequipes() {
 	return equiperep.countetudiantbyequipes();
 }
 
+<<<<<<< HEAD
+=======
 @Override
+>>>>>>> a990b5996a1b9342f617c2a19853a5b029d8638e
 public void favorite(int id) {
 	
 	  equiperep.favorite(id);
 }
 
+<<<<<<< HEAD
+=======
 @Override
+>>>>>>> a990b5996a1b9342f617c2a19853a5b029d8638e
 public void unfavorite(int id) {
 	  equiperep.unfavorite(id);
 	
 }
 
+<<<<<<< HEAD
+=======
 @Override
+>>>>>>> a990b5996a1b9342f617c2a19853a5b029d8638e
 public List<Equipe> myFavorites() {
 	return equiperep.myFavorites();
 }

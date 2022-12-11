@@ -1,8 +1,10 @@
 package tn.esprit.controller;
 
-import java.util.HashMap;
+
+import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
+import java.util.Set;
+
 
 import javax.websocket.server.PathParam;
 
@@ -19,13 +21,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.extern.slf4j.Slf4j;
-import tn.esprit.persistance.Contrat;
-import tn.esprit.persistance.Etudiant;
+import tn.esprit.persistance.*;
 import tn.esprit.persistance.repositories.EquipeRepository;
 import tn.esprit.persistance.repositories.EtudiantRepository;
 import tn.esprit.services.Interfaces.EquipeService;
 import tn.esprit.services.Interfaces.EtudiantService;
-
+import tn.esprit.services.Interfaces.UserServiceInterface;
+@Slf4j
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/controllerEtudiant")
@@ -34,6 +36,8 @@ public class EtudiantController {
 	
   @Autowired
   EtudiantService etudserv;
+  @Autowired
+  UserServiceInterface userService;
  
  
   @GetMapping("/DisplayStudents")
@@ -54,8 +58,33 @@ public class EtudiantController {
 	  }
   
   @PostMapping("/ajouterEtudiant")
-  public Etudiant addEtudiant(@RequestBody Etudiant e) {
+  public Etudiant addEtudiant(@RequestBody Etudiant e) throws Exception {
 	  e=etudserv.addEtudiant(e);
+
+      Set<UserRole> roles = new HashSet<>();
+
+      Role role = new Role();
+      role.setRoleId(101L);
+      role.setRoleName("Student");
+
+      UserRole userRole = new UserRole();
+        Users user = new Users();
+
+        user.setUsername(e.getNomE());
+        user.setPassword("123456");
+        user.setEmail("Test@gmail.com");
+        user.setFirstName(e.getNomE());
+        user.setLastName(e.getPrenomE());
+
+        user.setEtudiant(e);
+        log.info("debug etudiant"+e);
+
+      userRole.setUser(user);
+      userRole.setRole(role);
+
+      roles.add(userRole);
+      userService.register(user,roles);
+
 	  return  e ;
   }
   

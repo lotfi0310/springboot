@@ -24,13 +24,11 @@ public class ContratServiceImplementation implements ContratService {
 ContratRepository contratrep; 
 @Autowired
 EtudiantRepository etudrep; 
-	@Override
 	public List<Contrat> retrieveAllContrats() {
 		log.info(" getting contrats ...");
 		return contratrep.findAll();
 	}
 
-	@Override
 	public Contrat updateContrat(Contrat ce) {
 		Contrat ce1=retrieveContrat(ce.getIdContrat());
 		log.info(""+ce.getIdContrat()+"Data before saving:");
@@ -45,7 +43,6 @@ EtudiantRepository etudrep;
 		
 	}
 
-	@Override
 	public Contrat addContrat(Contrat ce) {
 		try {
 			log.info(" adding contart ... ");
@@ -57,32 +54,27 @@ EtudiantRepository etudrep;
 		return ce ;
 	}
 
-	@Override
 	public Contrat retrieveContrat(Integer idContrat) {
 		
 		return contratrep.findById(idContrat).get();
 	}
 
-	@Override
 	public void removeContrat(Integer idContrat) {
        contratrep.deleteById(idContrat);		
 	}
 //
 	
 
-	@Override
 	@Scheduled(fixedDelay = 60000)
 	public void dropAllContratsEveryYear() {
 		contratrep.deleteAll();
 	}
 
-	@Override
 	@Scheduled(fixedRate = 6000)
 	public int dropcontratdunjour() {
 	 return	contratrep.dropcontratdunjour();
 	}
 
-	@Override
 	public Etudiant assigncontratToEtudiant(int idcontrat, int idEtudiant) {
      Etudiant e=etudrep.findById(idEtudiant).get(); 
      Contrat c =contratrep.findById(idcontrat).get(); 
@@ -91,12 +83,18 @@ EtudiantRepository etudrep;
 	return e;
 	}
 
+<<<<<<< HEAD
+=======
 	 @Override
+>>>>>>> a990b5996a1b9342f617c2a19853a5b029d8638e
 	 public List<ArchivePercentType> getContratPercentByArchiveStatus(){
 		 return contratrep.getPercentageGroupByArchiveStatus();
 	 }
 
+<<<<<<< HEAD
+=======
 	 @Override
+>>>>>>> a990b5996a1b9342f617c2a19853a5b029d8638e
 	 public List<Contrat> findAllByDateDebutContratOrDateFinContratOrSpecialiteOrArchiveOrMontantContrat(Date dateDebut, Date dateFin, Specialite specialite, boolean archive, int montantContrat) {
 		 return contratrep.findAllByDateDebutContratOrDateFinContratOrSpecialiteOrArchiveOrMontantContrat(dateDebut, dateFin, specialite, archive, montantContrat);
 	 }
