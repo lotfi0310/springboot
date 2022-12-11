@@ -58,6 +58,10 @@ public List<Departement> retrieveDepartementsByUniversite(Integer idUniversite) 
 }
 
 
+<<<<<<< HEAD
+=======
+@Override
+>>>>>>> a990b5996a1b9342f617c2a19853a5b029d8638e
 public void removeUniv(int id) {
 	// TODO Auto-generated method stub
 	univrep.deleteById(id);

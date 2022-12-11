@@ -83,10 +83,18 @@ EtudiantRepository etudrep;
 	return e;
 	}
 
+<<<<<<< HEAD
+=======
+	 @Override
+>>>>>>> a990b5996a1b9342f617c2a19853a5b029d8638e
 	 public List<ArchivePercentType> getContratPercentByArchiveStatus(){
 		 return contratrep.getPercentageGroupByArchiveStatus();
 	 }
 
+<<<<<<< HEAD
+=======
+	 @Override
+>>>>>>> a990b5996a1b9342f617c2a19853a5b029d8638e
 	 public List<Contrat> findAllByDateDebutContratOrDateFinContratOrSpecialiteOrArchiveOrMontantContrat(Date dateDebut, Date dateFin, Specialite specialite, boolean archive, int montantContrat) {
 		 return contratrep.findAllByDateDebutContratOrDateFinContratOrSpecialiteOrArchiveOrMontantContrat(dateDebut, dateFin, specialite, archive, montantContrat);
 	 }

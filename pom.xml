@@ -37,6 +37,7 @@
 			<version>5.0.6</version>
 		</dependency>
 
+<<<<<<< HEAD
 
 
 		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security -->
@@ -77,6 +78,8 @@
 
 
 
+=======
+>>>>>>> a990b5996a1b9342f617c2a19853a5b029d8638e
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>

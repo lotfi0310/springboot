@@ -63,25 +63,45 @@ public Etudiant assignEquipeToEtudiant(int idEquipe, int idEtudiant) {
 	return e;
 }
 
+<<<<<<< HEAD
+=======
+@Override
+>>>>>>> a990b5996a1b9342f617c2a19853a5b029d8638e
 public List<Etudiant> getAllEtudiantsfromEquipe(int id) {
 	return equiperep.getAllEtudiantsfromEquipe(id);
 
 }
 
+<<<<<<< HEAD
+=======
+@Override
+>>>>>>> a990b5996a1b9342f617c2a19853a5b029d8638e
 public Collection<NameOnly> countetudiantbyequipes() {
 	return equiperep.countetudiantbyequipes();
 }
 
+<<<<<<< HEAD
+=======
+@Override
+>>>>>>> a990b5996a1b9342f617c2a19853a5b029d8638e
 public void favorite(int id) {
 	
 	  equiperep.favorite(id);
 }
 
+<<<<<<< HEAD
+=======
+@Override
+>>>>>>> a990b5996a1b9342f617c2a19853a5b029d8638e
 public void unfavorite(int id) {
 	  equiperep.unfavorite(id);
 	
 }
 
+<<<<<<< HEAD
+=======
+@Override
+>>>>>>> a990b5996a1b9342f617c2a19853a5b029d8638e
 public List<Equipe> myFavorites() {
 	return equiperep.myFavorites();
 }
