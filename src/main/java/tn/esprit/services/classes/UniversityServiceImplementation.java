@@ -19,7 +19,6 @@ UniversityRepository univrep;
 @Autowired 
 DepartmentRepository deprep; 
 
-@Override
 public List<Universite> retrieveAllUniversites() {
 	if(univrep.findAll()==null) {
 	 log.error("error fetching universities " );
@@ -27,13 +26,11 @@ public List<Universite> retrieveAllUniversites() {
 	return univrep.findAll();
 }
 
-@Override
 public Universite addUniversite(Universite u) {
 u=univrep.save(u);
 return u;
 }
 
-@Override
 public Universite updateUniversite(Universite u) {
 	   
 	  log.info(""+u);
@@ -41,12 +38,10 @@ public Universite updateUniversite(Universite u) {
      return  univrep.save(u);
 }
 
-@Override
 public Universite retrieveUniversite(Integer idUniversite) {
 	return univrep.findById(idUniversite).get();
 }
 
-@Override
 public void assignUniversiteToDepartement(Integer idUniversite, Integer idDepartement) {
  Universite u =univrep.findById(idUniversite).get(); 
  Departement d=deprep.findById(idDepartement).get(); 
@@ -58,11 +53,14 @@ log.info("added succesfuly...");
 
 }
 
-@Override
 public List<Departement> retrieveDepartementsByUniversite(Integer idUniversite) {
  	return univrep.retrieveDepartementsByUniversite(idUniversite);
 }
 
 
+public void removeUniv(int id) {
+	// TODO Auto-generated method stub
+	univrep.deleteById(id);
+}
 
 }

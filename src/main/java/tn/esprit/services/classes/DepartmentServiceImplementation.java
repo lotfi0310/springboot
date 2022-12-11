@@ -17,18 +17,15 @@ public class DepartmentServiceImplementation implements DepartmentService{
 	@Autowired 
 	DepartmentRepository deprep; 
 
-	@Override
 	public List<Departement> retrieveAllDepartements() {
 		return deprep.findAll();
 	}
 
-	@Override
 	public Departement addDepartement(Departement d) {
 		 deprep.save(d);
 		return d;
 	}
 
-	@Override
 	public Departement updateDepartement(Integer id,String name) {
 		Optional<Departement> department = deprep.findById(id);
 		if(department.isPresent()) {
@@ -40,23 +37,19 @@ public class DepartmentServiceImplementation implements DepartmentService{
 		return null;
 	}
 //
-	@Override
 	public Departement retrieveDepartement(Integer idDepart) {
 		return deprep.findById(idDepart).get();
 	}
 
-	@Override
 	public List<Etudiant> getEtudiantsByDepartement(Integer idDepartement) {
 		return deprep.getEtudiantsByDepartement(idDepartement);
 	}
 	
-	@Override
 	public List<Enseignant> getEnseignantsByDepartement(Integer idDepartement) {
 		return deprep.getEnseignantsByDepartement(idDepartement);
 	}
 
 
-	@Override
 	public void deleteDepartment(Integer idDepartement) {
 		 deprep.deleteById(idDepartement);
 		

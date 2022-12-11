@@ -25,16 +25,23 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 @Entity
 @Table(name = "Equipe")
 public class Equipe implements Serializable {
+	private int y;
+	private String label;
 	//
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	
 	@Column(name="idEquipe")
 	private int idEquipe ; 
 	private String nomEquipe ; 
+	private String logo;
+	private int fav;
 	@Enumerated(EnumType.STRING)
 	private Niveau niveau; 
 	@OneToOne
 	private DetailEquipe detail_equipe ; 
+	@OneToOne
+	private Stade stade ; 
 	@ManyToMany
 	@JsonIgnore
 	private Set<Etudiant> etudiants; 
@@ -71,10 +78,20 @@ public Set<Etudiant> getEtudiants() {
 public void setEtudiants(Set<Etudiant> etudiants) {
 	this.etudiants = etudiants;
 }
-public Equipe(int idEquipe, String nomEquipe, Niveau niveau, DetailEquipe detail_equipe, Set<Etudiant> etudiants) {
+
+public String getLogo() {
+	return logo;
+}
+public void setLogo(String logo) {
+	this.logo = logo;
+}
+
+public Equipe(int idEquipe, String nomEquipe, String logo, Niveau niveau, DetailEquipe detail_equipe,
+		Set<Etudiant> etudiants) {
 	super();
 	this.idEquipe = idEquipe;
 	this.nomEquipe = nomEquipe;
+	this.logo = logo;
 	this.niveau = niveau;
 	this.detail_equipe = detail_equipe;
 	this.etudiants = etudiants;
@@ -87,6 +104,22 @@ public String toString() {
 			+ ", getEtudiants()=" + getEtudiants() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
 			+ ", toString()=" + super.toString() + "]";
 }
+public int getY() {
+	return y;
+}
+public String getLabel() {
+	return label;
+}
+public void setLabel(String label) {
+	this.label = label;
+}
+public int getFav() {
+	return fav;
+}
+public void setFav(int fav) {
+	this.fav = fav;
+}
+
 
 
 }

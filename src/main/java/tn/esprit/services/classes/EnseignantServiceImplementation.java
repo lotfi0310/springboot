@@ -21,12 +21,10 @@ public class EnseignantServiceImplementation implements EnseignantService{
 	EnseignantRepository enseignantRepository;
 	@Autowired 
 	DepartmentRepository departmentRepository;
-	@Override
 	public List<Enseignant> retrieveAllEnseignannt() {
 		return enseignantRepository.findAll();
 	}
 
-	@Override
 	public Enseignant addEnseignant(EnseignantInput ens) {
 		Enseignant e = new  Enseignant();
 		e.setCin(ens.getCin());
@@ -40,7 +38,6 @@ public class EnseignantServiceImplementation implements EnseignantService{
 		return e;
 	}
 
-	@Override
 	public Enseignant updateEnseignant(Integer idEns, EnseignantInput ens) {
 		Enseignant e = enseignantRepository.findById(idEns).get();
 		e.setCin(ens.getCin());
@@ -54,13 +51,11 @@ public class EnseignantServiceImplementation implements EnseignantService{
 		return e;
 	}
 
-	@Override
 	public Enseignant retrieveEnseignant(Integer idEns) {
 		// TODO Auto-generated method stub
 		return enseignantRepository.findById(idEns).get();
 	}
 
-	@Override
 	public void deleteEnseignat(Integer idEns) {
 		enseignantRepository.delete(enseignantRepository.findById(idEns).get());
 		

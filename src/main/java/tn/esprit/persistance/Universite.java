@@ -20,6 +20,13 @@ public class Universite implements Serializable{
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	@Column(name="idUniveriste")
 	private int idUniv ; 
+	private String imageUniv;
+	public String getImageUniv() {
+		return imageUniv;
+	}
+	public void setImageUniv(String imageUniv) {
+		this.imageUniv = imageUniv;
+	}
 	private String nomUniv  ;
 	@OneToMany
 	private Set<Departement> departments ;
@@ -52,8 +59,11 @@ public class Universite implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return "Universite [idUniv=" + idUniv + ", nomUniv=" + nomUniv + ", departments=" + departments + "]";
+		return "Universite [idUniv=" + idUniv + ", imageUniv=" + imageUniv + ", nomUniv=" + nomUniv + ", departments="
+				+ departments + "]";
 	}
+	
+	
 	
 
 }

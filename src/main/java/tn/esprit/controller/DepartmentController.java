@@ -37,7 +37,6 @@ public class DepartmentController {
 	public Departement addDepartement(@RequestBody DepartementInput d) {
 		Departement dep = new Departement();
 		dep.setNomDepart(d.getNomDepart());
-		dep.setIdDepart(0);
 		System.out.println(dep.getNomDepart());
 		System.out.println(dep.getIdDepart());
 		depserv.addDepartement(dep);

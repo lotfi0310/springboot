@@ -16,5 +16,7 @@ public interface UniversiteService {
 			idDepartement);
 	
 	public List<Departement> retrieveDepartementsByUniversite(Integer idUniversite);
+	void removeUniv(int id);
+
 }
 //
