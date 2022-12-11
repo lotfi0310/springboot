@@ -22,7 +22,7 @@ public class DetailEquipeController {
 	  @Autowired
 	    DetailEquipeService detailEquipeService;
 
-	    @GetMapping("detailEquipes")
+	    @GetMapping("/detailEquipes")
 	    private List<DetailEquipe> getAlldetailEquipes() {
 	        return detailEquipeService.getDetailEquipes();
 	    }

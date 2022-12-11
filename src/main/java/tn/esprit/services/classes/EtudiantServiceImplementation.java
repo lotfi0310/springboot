@@ -1,6 +1,7 @@
 package tn.esprit.services.classes;
 
 import java.util.List;
+import java.util.Map;
 
 import org.hibernate.HibernateException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -114,7 +115,9 @@ public class EtudiantServiceImplementation implements EtudiantService {
 	public List<Integer> getAllEtudiantAges() {
 		return etudrep.getAllEtudiantAges();
 	}
-	 
+
+
+	
 
 	
 //
