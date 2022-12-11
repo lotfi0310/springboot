@@ -2,6 +2,7 @@ package tn.esprit.persistance.repositories;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -36,4 +37,7 @@ public interface EtudiantRepository extends JpaRepository<Etudiant,Integer>{
 	@Query(value="SELECT  DATE_FORMAT(CURRENT_DATE, '%Y') - DATE_FORMAT(date_naissance,'%Y') as 'age' FROM etudiant "
 			+ "",nativeQuery = true)
 	 public List<Integer> getAllEtudiantAges(); 
+	
+	
+
 }

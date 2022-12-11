@@ -1,6 +1,8 @@
 package tn.esprit.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.websocket.server.PathParam;
 
@@ -98,6 +100,7 @@ public class EtudiantController {
 	public List<Integer> getAllEtudiantAges() {
 		return etudserv.getAllEtudiantAges();
 	}
+
 
   }
 

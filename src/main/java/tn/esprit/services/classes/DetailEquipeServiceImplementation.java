@@ -11,7 +11,7 @@ import tn.esprit.services.Interfaces.DetailEquipeService;
 @Service
 public class DetailEquipeServiceImplementation implements DetailEquipeService{
 
-@Autowired
+   @Autowired
    DetailEquipeRepository detailEquipeRepository;
 
    public List<DetailEquipe> getDetailEquipes(){

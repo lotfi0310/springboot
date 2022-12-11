@@ -16,7 +16,6 @@ import tn.esprit.persistance.Departement;
 import tn.esprit.persistance.Universite;
 import tn.esprit.services.Interfaces.UniversiteService;
 
-@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("UniversityController")
