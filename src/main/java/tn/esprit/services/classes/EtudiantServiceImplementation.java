@@ -31,13 +31,11 @@ public class EtudiantServiceImplementation implements EtudiantService {
 	  EquipeRepository equiprep;
 	  
 	    
-	@Override
 	public List<Etudiant> retrieveAllEtudiants() {
 		 return etudrep.findAll();
 		
 	}
 
-	@Override
 	public Etudiant addEtudiant(Etudiant e) {
 		try {
 		log.info(" adding student ... ");
@@ -50,7 +48,6 @@ public class EtudiantServiceImplementation implements EtudiantService {
 		return e;
 	}
 
-	@Override
 	public Etudiant updateEtudiant(Etudiant e) {
 	
 		log.info(""+e.getIdEtudiant()+"Data before saving");
@@ -62,25 +59,21 @@ public class EtudiantServiceImplementation implements EtudiantService {
    
 	}
 
-	@Override
 	public Etudiant retrieveEtudiant(Integer idEtudiant) {
-		return etudrep.findById(idEtudiant).orElseThrow();
+		return etudrep.findById(idEtudiant).orElseThrow(null);
 	}
 
-	@Override
 	public void removeEtudiant(Integer idEtudiant) {
 		 etudrep.deleteById(idEtudiant);	
 		    //etudrep.delete(etudrep.findById(id)); 
 	}
 
 	
-	@Override
 	public List<Etudiant> getAllEtudiantsBeginByNomE(String name) {
 		log.info(""+name);
 		return etudrep.getAllEtudiantsBeginByNomE(name);
 	}
 
-	@Override
 	public Etudiant getEtudiantByNomE(String name) {
 		log.info("resultat de recherche :"+etudrep.getEtudiantByNomE(name));
 		return etudrep.getEtudiantByNomE(name);
@@ -88,7 +81,6 @@ public class EtudiantServiceImplementation implements EtudiantService {
 	}
 
 
-	@Override
 	public void assignEtudiantToDepartement(Integer etudiantId, Integer departementId) {
 		Etudiant e = etudrep.findById(etudiantId).get();
         Departement d = deprep.findById(departementId).get();
@@ -97,7 +89,6 @@ public class EtudiantServiceImplementation implements EtudiantService {
         log.info("etudiant "+e.getPrenomE()+" "+e.getNomE()+" assigné au departement "+d.getNomDepart());
 	}
 
-	@Override
 	public Contrat affectContratToEtudiant(Contrat ce, String nomE, String prenomE) {
 		int idetudiant=etudrep.searchEtudiantBynomEtprenom(nomE, prenomE);
 		Etudiant e =etudrep.findById(idetudiant).get();
@@ -106,12 +97,10 @@ public class EtudiantServiceImplementation implements EtudiantService {
 		return ce;
 	}
 
-	@Override
 	public int searchEtudiantBynomEtprenom(String nom, String prenom) {
 		return etudrep.searchEtudiantBynomEtprenom(nom, prenom);
 	}
 
-	@Override
 	public Etudiant addAndAssignEtudiantToEquipeAndContract(Etudiant e, Integer idContrat, Integer idEquipe) {
 		Contrat c =contrep.getById(idContrat);
 		Equipe eq=equiprep.getById(idEquipe);
@@ -122,7 +111,6 @@ public class EtudiantServiceImplementation implements EtudiantService {
 		
 	}
 
-	@Override
 	public List<Integer> getAllEtudiantAges() {
 		return etudrep.getAllEtudiantAges();
 	}
